@@ -1,1 +1,91 @@
-/* Your SCSS here. */
+$color-background: #0d1117;
+$color-surface:    #161b22;
+$color-text:       #c9d1d9;
+$color-muted:      #8b949e;
+$color-primary:    #58a6ff;
+$color-border:     #30363d;
+$font-header: 'Montserrat', sans-serif;
+$font-main: 'Inter', sans-serif;
+
+header {
+    grid-area: header;
+    background-color: $color-surface;
+    border-bottom: 1px solid $color-border;
+    font-family: $font-header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+
+    &.resize {
+        padding: 0.5rem 2rem;
+
+        h2 {
+            font-size: larger;
+        }
+    }
+
+
+    h2 {
+        color: $color-primary;
+        margin: 0;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    nav {
+        display: flex;
+        gap: 0.5rem;
+
+        a {
+            color: $color-primary;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.current {
+                background-color: lighten($color-surface, 10%);
+            }
+        }
+    }
+}
+
+main {
+    grid-area: main;
+    text-align: center;
+    font-family: $font-main;
+    
+    section {
+        height: 1000px;
+        padding: 5px;
+    }
+}
+
+footer {
+    grid-area: footer;
+    background-color: $color-surface;
+    font-family: $font-main;
+    color: $color-muted;
+    padding-left: 1rem;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header"
+        "main main main main"
+        "footer footer footer footer";
+    margin: 0;
+    background-color: $color-background;
+    color: $color-text;
+}
