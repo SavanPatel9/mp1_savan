@@ -63,10 +63,136 @@ main {
     text-align: center;
     font-family: $font-main;
     
-    section {
+    #home, #about, #projects, #interests {
         height: 1000px;
         padding: 5px;
     }
+}
+
+#projects {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 7% 93%;
+    grid-template-areas: 
+        "p-title p-title p-title p-title"
+        "carousel carousel carousel carousel";
+
+    #project-title {
+        grid-area: p-title;
+    }
+    #carousel {
+        grid-area: carousel;
+        display: flex;
+        flex-direction: row;
+        transition: transform 0.6s ease-in-out;
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+
+            &:nth-child(1) { background: #161b22; }
+            &:nth-child(2) { background: #1e2a44; }
+            &:nth-child(3) { background: #2e1f47; }
+            &:nth-child(4) { background: #2c2c2c; }
+        }
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        color: #9ca3af;
+        border: none;
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        z-index: 100;
+        border-radius: 50%;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #4f81ff;
+        }
+
+        &.prev { left: 1rem; }
+        &.next { right: 1rem; }
+    }
+}
+
+#about {
+    display: grid;
+    grid-template-columns: 2% 48% 48% 2%;
+    grid-template-rows: 7% 32% 1% 60%;
+    grid-template-areas: 
+        "a-title a-title a-title a-title"
+        "backdrop backdrop backdrop backdrop"
+        ". social social ."
+        "a-content a-content a-content a-content";
+
+    h2 { grid-area: a-title; }
+    #backdrop { grid-area: backdrop; }
+    #socials { grid-area: social}
+    #content { grid-area: a-content; }
+}
+
+#socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px;
+    padding: 0 40px;
+    margin: 0 auto;
+    justify-items: center;
+    transform: translateY(-20px);
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:nth-child(1) { background: #0077B5; }
+        &:nth-child(2) { background: #5D3A7D; }
+        &:nth-child(3) { background: #555555; }
+    }
+}
+
+#backdrop {
+    background-image: url("../assets/backdrop-3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    &::before {
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5); // dark overlay
+        z-index: 0;
+    }
+
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+#columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
 }
 
 footer {
@@ -88,4 +214,5 @@ body {
     margin: 0;
     background-color: $color-background;
     color: $color-text;
+    overflow-x: hidden;
 }

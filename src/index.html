@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
         <title>MP1</title>
     </head>
     <body>
@@ -20,21 +21,51 @@
             <section id="home">
                 <h1>Welcome</h1>
                 <p>This is the home section.</p>
+                <video width="500" height="500" autoplay muted loop playsinline>
+                    <source src="/assets/embedVideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </section>
 
             <section id="about">
                 <h2>About</h2>
-                <p>Information about the site.</p>
+                <div id="backdrop"></div>
+                <div id="socials">
+                    <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/savanapatel/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a id="github" target="_blank" href="https://github.com/SavanPatel9"><i class="fa-brands fa-github"></i></a>
+                    <a id="resume" href="/assets/SavanPatel_Resume.pdf" download="SavanPatel_Resume.pdf"><i class="fa-solid fa-file"></i></a>
+                </div>
+                <div id="content"></div>
             </section>
 
             <section id="projects">
-                <h2>Projects</h2>
-                <p>Details about services offered.</p>
+                <h2 id="project-title">Projects</h2>
+                <div id="carousel">
+                    <section class="carousel-slide">
+                        <h2>Slide 1</h2>
+                    </section>
+                    <section class="carousel-slide">
+                        <h2>Slide 2</h2>
+                    </section>
+                    <section class="carousel-slide">
+                        <h2>Slide 3</h2>
+                    </section>
+                    <section class="carousel-slide">
+                        <h2>Slide 4</h2>
+                    </section>
+                </div>
+
+                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
             </section>
 
             <section id="interests">
                 <h2>Interests</h2>
-                <p>Ways to get in touch.</p>
+                <div id="columns">
+                    <div class="interest-column">Column 1</div>
+                    <div class="interest-column">Column 2</div>
+                    <div class="interest-column">Column 3</div>
+                </div>
             </section>
         </main>
         <footer>
