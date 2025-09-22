@@ -5,7 +5,7 @@ const track = document.querySelector('#carousel');
 const slides = Array.from(track.children);
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
-
+const projectNav = document.getElementById('project_nav');
 let currentIndex = 0;
 
 function updateSlidePosition() {
@@ -48,7 +48,6 @@ function updateNavBar () {
     })
 }
 
-// Smooth scroll with header offset
 navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
@@ -62,6 +61,20 @@ navLinks.forEach((link) => {
             top: window.scrollY + targetTop - headerHeight + 1,
             behavior: "smooth",
         });
+    });
+});
+
+projectNav.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const targetId = projectNav.getAttribute("href").slice(1);
+    const target = document.getElementById(targetId);
+    const targetTop = target.getBoundingClientRect().top;
+    const headerHeight = header.offsetHeight;
+
+    window.scrollTo({
+        top: window.scrollY + targetTop - headerHeight + 1,
+        behavior: "smooth",
     });
 });
 

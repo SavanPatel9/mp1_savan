@@ -6,6 +6,8 @@ $color-primary:    #58a6ff;
 $color-border:     #30363d;
 $font-header: 'Montserrat', sans-serif;
 $font-main: 'Inter', sans-serif;
+$font-body: 'Roboto Slab', serif;
+
 
 header {
     grid-area: header;
@@ -64,16 +66,66 @@ main {
     font-family: $font-main;
     
     #home, #about, #projects, #interests {
-        height: 1000px;
-        padding: 5px;
+        height: 850px;
     }
+
+    #home, #interests, #about { margin: 0 auto; }
+}
+
+.home-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 8%;
+    background: transparent;
+    color: $color-primary;
+}
+
+.home-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.home-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #888888;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    background: #4f46e5;
+    color: #fff;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: #3730a3;
+    }
+}
+
+.home-video video {
+    max-width: 80%;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 #projects {
     position: relative;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 7% 93%;
+    grid-template-rows: 10% 90%;
     grid-template-areas: 
         "p-title p-title p-title p-title"
         "carousel carousel carousel carousel";
@@ -127,14 +179,16 @@ main {
 #about {
     display: grid;
     grid-template-columns: 2% 48% 48% 2%;
-    grid-template-rows: 7% 32% 1% 60%;
+    grid-template-rows: 10% 29% 1% 60%;
     grid-template-areas: 
         "a-title a-title a-title a-title"
         "backdrop backdrop backdrop backdrop"
         ". social social ."
         "a-content a-content a-content a-content";
 
-    h2 { grid-area: a-title; }
+    h2 { 
+        grid-area: a-title;
+    }
     #backdrop { grid-area: backdrop; }
     #socials { grid-area: social}
     #content { grid-area: a-content; }
@@ -147,14 +201,14 @@ main {
     padding: 0 40px;
     margin: 0 auto;
     justify-items: center;
-    transform: translateY(-20px);
+    transform: translateY(30px);
 
     a {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         text-decoration: none;
         color: white;
@@ -171,7 +225,7 @@ main {
 }
 
 #backdrop {
-    background-image: url("../assets/backdrop-3.jpg");
+    background-image: url("../assets/backdrop.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -189,10 +243,106 @@ main {
     }
 }
 
+#content {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 15% 35% 35% 15%;
+    grid-template-areas: 
+        ". . . ."
+        "first first first first"
+        "second second second second"
+        ". . . .";
+    place-items: center;
+    
+    p {
+        font-size: larger;
+        font-family: $font-body;
+        max-width: 730px;
+    }
+    p:nth-child(1) { grid-area: first; }
+    p:nth-child(2) { grid-area: second; }
+}
+
+#interests {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+        "i-title i-title i-title i-title"
+        "i-content i-content i-content i-content"
+        ". . . .";
+
+    h2 { grid-area: i-title; }
+    #columns { grid-area: i-content; }
+}
+
+.project-card {
+    background: transparent;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: #eaeaea;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: #b5b5b5;
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #2c2c2c;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #eaeaea;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background: #0077ff;;
+        color: #fff;
+    }
+}
+
 #columns {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    place-items: center;
+    gap: 3rem;
+    margin: 0 20px;
+
+    .interest-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 300px;
+        margin-top: -260px;
+        padding: 0px 10px 0px 10px;
+        border: none;
+        height: 50%;
+        border-radius: 20%;
+        box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.3);
+        background-color: #1e1e1e;
+        font-family: $font-main;
+        font-size: large;
+    }
 }
 
 footer {
@@ -201,6 +351,13 @@ footer {
     font-family: $font-main;
     color: $color-muted;
     padding-left: 1rem;
+}
+
+.section-header {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {

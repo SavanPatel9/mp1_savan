@@ -18,40 +18,133 @@
             </nav>
         </header>
         <main>
-            <section id="home">
-                <h1>Welcome</h1>
-                <p>This is the home section.</p>
-                <video width="500" height="500" autoplay muted loop playsinline>
-                    <source src="/assets/embedVideo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <section id="home" class="home-section">
+                <div class="home-content">
+                    <h1 class="home-title">👋 Welcome to My Portfolio</h1>
+                    <p class="home-subtitle">
+                        I'm <strong>Savan Patel</strong>, a developer passionate about building
+                        smart solutions, exploring new technologies, and creating meaningful projects.
+                    </p>
+
+                    <div class="home-buttons">
+                        <a id="project_nav" href="#projects" class="btn">View My Work</a>
+                    </div>
+                </div>
+
+                <div class="home-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="./assets/embedVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </section>
 
             <section id="about">
-                <h2>About</h2>
+                <h2 class="section-header">About Me</h2>
                 <div id="backdrop"></div>
                 <div id="socials">
-                    <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/savanapatel/"><i class="fa-brands fa-linkedin"></i></a>
-                    <a id="github" target="_blank" href="https://github.com/SavanPatel9"><i class="fa-brands fa-github"></i></a>
-                    <a id="resume" href="/assets/SavanPatel_Resume.pdf" download="SavanPatel_Resume.pdf"><i class="fa-solid fa-file"></i></a>
+                    <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/savanapatel/"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                    <a id="github" target="_blank" href="https://github.com/SavanPatel9"><i class="fa-brands fa-github fa-lg"></i></a>
+                    <a id="resume" href="/assets/SavanPatel_Resume.pdf" download="SavanPatel_Resume.pdf"><i class="fa-solid fa-file fa-lg"></i></a>
                 </div>
-                <div id="content"></div>
+                <div id="content">
+                    <p>
+                        Hi, I’m <strong>Savan Patel</strong>, a full-stack engineer 
+                        with a passion for building clean, scalable, and user-friendly solutions. 
+                        I enjoy working with technologies like <em>React.js, TypeScript, Express.js, and PostgreSQL</em>, and I’m 
+                        always excited to learn and experiment with new tools.
+                    </p>
+                    <p>
+                        When I’m not coding, you’ll find me playing video games with friends or working on side projects. I thrive in 
+                        collaborative environments where I can solve problems and deliver impact.
+                    </p>
+                </div>
             </section>
 
             <section id="projects">
-                <h2 id="project-title">Projects</h2>
+                <h2 id="project-title" class="section-header">Projects</h2>
                 <div id="carousel">
                     <section class="carousel-slide">
-                        <h2>Slide 1</h2>
+                        <div class="project-card">
+                            <img src="./assets/portfolio.png" alt="Screenshot of Portfolio Website" class="project-image">
+
+                            <div class="project-content">
+                                <h3 class="project-title">Personal Portfolio Website</h3>
+                                <p class="project-description">
+                                    A responsive, modern <strong>portfolio website</strong> built with HTML, CSS, and JavaScript to showcase my 
+                                    projects, skills, and experience. Designed with a clean grid-based layout and interactive components to 
+                                    provide an engaging user experience across devices.
+                                </p>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/SavanPatel9/portfolio" target="_blank" class="project-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <section class="carousel-slide">
-                        <h2>Slide 2</h2>
+                        <div class="project-card">
+                            <img src="./assets/wordle.png" alt="Screenshot of Wordle Practice" class="project-image">
+
+                            <div class="project-content">
+                                <h3 class="project-title">Wordle Practice</h3>
+                                <p class="project-description">
+                                    A practice tool inspired by <strong>Wordle</strong> that helps players improve their guessing strategies. 
+                                    Built with <strong>JavaScript</strong>, <strong>HTML</strong>, and <strong>CSS</strong>, it filters 
+                                    possible words based on user feedback and suggests optimal guesses to narrow down options efficiently.
+                                </p>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/SavanPatel9/wordle-practice" target="_blank" class="project-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <section class="carousel-slide">
-                        <h2>Slide 3</h2>
+                        <div class="project-card">
+                            <img src="./assets/webscrape.png" alt="Screenshot of Project 1" class="project-image">
+
+                            <div class="project-content">
+                                <h3 class="project-title">LinkedIn Job Posting Scraper</h3>
+                                <p class="project-description">
+                                    A Python-based webscraping tool that collects job postings from LinkedIn’s public job search API, extracting details 
+                                    like job title, company name, location, salary, and more. Built with <strong>requests</strong>, 
+                                    <strong>BeautifulSoup</strong>, and <strong>pandas</strong>, the tool automates data collection and saves results 
+                                    into structured CSV files for easy analysis.
+                                </p>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/SavanPatel9/jobposting_webscrape" target="_blank" class="project-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <section class="carousel-slide">
-                        <h2>Slide 4</h2>
+                        <div class="project-card">
+                            <img src="./assets/blackjack.jpeg" alt="Screenshot of Blackjack Game" class="project-image">
+
+                            <div class="project-content">
+                                <h3 class="project-title">Blackjack Game (Java)</h3>
+                                <p class="project-description">
+                                    A Java-based implementation of the classic <strong>Blackjack</strong> card game with a graphical user interface. 
+                                    Built using <strong>Swing</strong> components such as JFrame, JPanel, and JButton, the game follows standard Blackjack 
+                                    rules including the dealer's <em>Soft-17</em> behavior. Demonstrates object-oriented design, GUI programming, and 
+                                    game logic in Java.
+                                </p>
+
+                                <div class="project-links">
+                                    <a href="https://github.com/SavanPatel9/Blackjack" target="_blank" class="project-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
 
@@ -60,11 +153,23 @@
             </section>
 
             <section id="interests">
-                <h2>Interests</h2>
+                <h2 class="section-header">Interests</h2>
                 <div id="columns">
-                    <div class="interest-column">Column 1</div>
-                    <div class="interest-column">Column 2</div>
-                    <div class="interest-column">Column 3</div>
+                    <div class="interest-column">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>I enjoy building responsive, modern web apps with clean UI and strong performance.</p>
+                    </div>
+                    <div class="interest-column">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Computing</h3>
+                        <p>Working with scalable infrastructure, deployment strategies, and modern cloud platforms like AWS and Azure.</p>
+                    </div>
+                    <div class="interest-column">
+                        <i class="fas fa-users"></i>
+                        <h3>Hobbies</h3>
+                        <p>Outside of tech, I enjoy working out, meeting new people, and experiencing new foods.</p>
+                    </div>
                 </div>
             </section>
         </main>
