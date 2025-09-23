@@ -6,6 +6,10 @@ const slides = Array.from(track.children);
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 const projectNav = document.getElementById('project_nav');
+const showBtn = document.getElementById("showPicture");
+const popup = document.getElementById("picture-popup");
+const closeBtn = document.getElementById("closePopup");
+
 let currentIndex = 0;
 
 function updateSlidePosition() {
@@ -23,7 +27,13 @@ prevBtn.addEventListener('click', () => {
     updateSlidePosition();
 });
 
-window.addEventListener('resize', updateSlidePosition);
+showBtn.addEventListener("click", () => {
+    popup.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+});
 
 function updateNavBar () {
     const scrollPos = header.offsetHeight;
@@ -86,4 +96,12 @@ window.addEventListener('scroll', () => {
     }
 
     updateNavBar();
+});
+
+window.addEventListener('resize', updateSlidePosition);
+
+window.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
 });
