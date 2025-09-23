@@ -1,9 +1,11 @@
 $color-background: #0d1117;
 $color-surface:    #161b22;
-$color-text:       #c9d1d9;
+$color-text:       #b1bac4;
 $color-muted:      #8b949e;
-$color-primary:    #58a6ff;
 $color-border:     #30363d;
+$color-heading:    #f0f6fc;
+$button-text:      #ffffff;
+$button-color:     #1e40af;
 $font-header: 'Montserrat', sans-serif;
 $font-main: 'Inter', sans-serif;
 $font-body: 'Roboto Slab', serif;
@@ -26,6 +28,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        color: $color-heading;
     }
 }
 
@@ -53,7 +56,7 @@ header {
 
 
     h2 {
-        color: $color-primary;
+        color: $color-heading;
         margin: 0;
         text-transform: uppercase;
         transition: all 0.3s ease;
@@ -64,7 +67,7 @@ header {
         gap: 0.5rem;
 
         a {
-            color: $color-primary;
+            color: $color-heading;
             padding: 1rem;
             text-decoration: none;
             text-transform: uppercase;
@@ -86,7 +89,7 @@ main {
     font-family: $font-main;
     
     #home, #about, #projects, #interests {
-        height: 850px;
+        min-height: 91vh;
     }
 
     #home, #interests, #about { margin: 0 auto; }
@@ -107,7 +110,7 @@ footer {
     gap: 2rem;
     padding: 4rem 8%;
     background: transparent;
-    color: $color-primary;
+    color: $color-heading;
 
     .home-title {
         font-size: 3rem;
@@ -119,7 +122,7 @@ footer {
         font-size: 1.2rem;
         line-height: 1.6;
         margin-bottom: 2rem;
-        color: #888888;
+        color: $color-muted;
     }
 
     .home-button {
@@ -132,12 +135,12 @@ footer {
         border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
-        background: #4f46e5;
-        color: #fff;
-        transition: background 0.3s ease;
+        background: $button-color;
+        color: $button-text;
+        transition: all 0.3s ease;
 
         &:hover {
-            background: #3730a3;
+            background: lighten($button-color, 10%);
         }
     }
 
@@ -171,15 +174,15 @@ footer {
         .btn {
             padding: 0.7rem 1.5rem;
             border-radius: 8px;
-            background: #1e40af;;
-            color: #fff;
+            background: $button-color;
+            color: $button-text;
             font-weight: 600;
             cursor: pointer;
             border: none;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
 
             &:hover {
-                background: #1e3a8a;
+                background: lighten($button-color, 10%);
             }
         }
     }
@@ -218,21 +221,6 @@ footer {
             border-radius: 12px;
             margin-top: 1rem;
         }
-
-        .btn {
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
-            background: #4f46e5;
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: background 0.3s ease;
-
-            &:hover {
-                background: #3730a3;
-            }
-        }
     }
 
     #socials {
@@ -243,7 +231,7 @@ footer {
         padding: 0 40px;
         margin: 0 auto;
         justify-items: center;
-        transform: translateY(30px);
+        transform: translateY(15px);
 
         a {
             display: flex;
@@ -343,7 +331,7 @@ footer {
         top: 50%;
         transform: translateY(-50%);
         background: transparent;
-        color: #9ca3af;
+        color: $color-muted;
         border: none;
         font-size: 2rem;
         padding: 0.5rem 1rem;
@@ -353,7 +341,7 @@ footer {
         transition: color 0.3s;
 
         &:hover {
-            color: #4f81ff;
+            color: lighten($button-color, 20%);
         }
 
         &.prev { left: 1rem; }
@@ -363,7 +351,7 @@ footer {
     .project-title {
         font-size: 1.4rem;
         margin-bottom: 0.6rem;
-        color: #eaeaea;
+        color: $color-heading;
     }
 
     .project-card {
@@ -375,7 +363,7 @@ footer {
 
         .project-description {
             font-size: 0.95rem;
-            color: #b5b5b5;
+            color: $color-text;
             margin-bottom: 1rem;
         }
 
@@ -392,13 +380,12 @@ footer {
                 padding: 0.4rem 0.8rem;
                 border-radius: 8px;
                 font-size: 0.9rem;
-                color: #eaeaea;
+                color: $button-text;
                 text-decoration: none;
                 transition: background 0.3s ease, color 0.3s ease;
 
                 &:hover {
-                    background: #0077ff;;
-                    color: #fff;
+                    background: #0077ff;
                 }
             }
         }
@@ -431,7 +418,7 @@ footer {
             align-items: center;
             max-width: 300px;
             margin-top: -260px;
-            padding: 0px 10px 0px 10px;
+            padding: 0px 10px;
             border: none;
             height: 50%;
             border-radius: 20%;
